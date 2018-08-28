@@ -1,3 +1,3 @@
 # Be sure to restart your server when you modify this file.
 
-Rails.application.config.session_store :cookie_store, key: '_gottaDo_session'
+Rails.application.config.session_store :cookie_store, key: '_At0mic_Falaf3l_session'

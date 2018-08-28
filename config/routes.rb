@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
 
+devise_for :users
 
-  resources :tasks
-  devise_for :views
-  devise_for :users
+  resources :tasks do
+    member do
+      post :change
+    end
+  end
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -11,6 +16,7 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get 'about' => "pages#about"
+  get 'test' => "pages#test"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -59,5 +65,6 @@ Rails.application.routes.draw do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
-  #   end
+#   end
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
